@@ -1,0 +1,78 @@
+<!DOCTYPE html >
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>School Web Page</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/body.css">
+    <script>
+        window.onload = function() {
+            var content = document.getElementById("content");
+            var nav = document.getElementById("main-navs");
+            var divList = content.getElementsByTagName("div");
+            var navList = nav.getElementsByTagName("li");
+            console.log(content + " " + nav + " " + divList + " " + navList);
+            console.log(navList.length + " " + divList.length);
+            for (var i = 0; i < divList.length; i++) {
+                navList[i].index = i;
+                navList[i].onclick = function() {
+                    for (var j = 0; j < divList.length; j++) {
+                        divList[j].style.display = "none";
+                    }
+                    console.log("The i is:" + i + "-" + this.index + " a");
+                    divList[this.index].style.display = "block";
+                };
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="a">
+        <div id="logo"><img src="img/main-banner.png" /></div>
+        <div id="main-nav">
+            <ul id="main-navs">
+                <li><a href="#" id="School-profile">学院概况</a></li>
+                <li><a href="#" id="Organization-setting">机构设置</a></li>
+                <li><a href="#" id="Education-Teaching">教育教学</a></li>
+                <li><a href="#">科学研究</a></li>
+                <li><a href="#">招生就业</a></li>
+                <li><a href="#">校园文化</a></li>
+                <li><a href="#">白师校友</a></li>
+                <li><a href="#">图书档案</a></li>
+            </ul>
+        </div>
+        <div class="content" id="content">
+            <div class="default-content" id="default-content">
+                <iframe id="iframe-first" frameBorder="1" src="page/content-default.html" scrolling="no"></iframe>
+            </div>
+            <div class="hidden-first display-none" id="content-first">
+                <iframe id="iframe-first" frameBorder="1" src="page/content-first.html" scrolling="no"></iframe>
+            </div>
+            <div class="hidden-first display-none" id="content-second">
+                <iframe id="iframe-first" FRAMEBORDER=0 src="page/content-second.html" scrolling="no"></iframe>
+            </div>
+            <div class="hidden-first display-none" id="content-third">
+                <iframe id="iframe-first" FRAMEBORDER=0 src="page/content-third.html" scrolling="no"></iframe>
+            </div>
+            <div class="hidden-first display-none" id="content-4th">
+                <iframe id="iframe-first" FRAMEBORDER=0 src="page/content-4th.html" scrolling="no"></iframe>
+            </div>
+            <div class="hidden-first display-none" id="content-5th">
+                <iframe id="iframe-first" FRAMEBORDER=0 src="page/content-5th.html" scrolling="no"></iframe>
+            </div>
+            <div class="hidden-first display-none" id="content-7th">
+                <iframe id="iframe-first" FRAMEBORDER=0 src="page/content-6th.html" scrolling="no"></iframe>
+            </div>
+            <div class="hidden-first display-none" id="content-8th">
+                <iframe id="iframe-first" FRAMEBORDER=0 src="page/content-7th.html" scrolling="no"></iframe>
+            </div>
+        </div>
+        <footer>
+            this is a footer
+        </footer>
+    </div>
+</body>
+
+</html>
+<!--I've never seen code that's uglier than this-->
